@@ -1,0 +1,13 @@
+"liferp"
+{
+	"base" "base"
+	"title" "LifeRP"
+	"maps" "rp_southside_day"
+	"category"	"other"
+	"version"   "1.0.0"
+    "menusystem"	"1"
+
+	"author_name"   "Sekta"
+    "author_email"  "akovlevmihail535@gmail.com"
+    "author_url"    "https://github.com/sekta2"
+}
