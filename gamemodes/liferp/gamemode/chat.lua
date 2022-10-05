@@ -1,5 +1,6 @@
 if SERVER then
 	util.AddNetworkString("lrp.chat")
+	util.AddNetworkString("lrp.notification")
 	net.Receive("lrp.chat", function(_,ply)
 		local type = net.ReadString()
 		local plys = {}
@@ -33,6 +34,12 @@ if SERVER then
 		net.Send(self)
 	end
 
+	function meta:lrpNotification(text)
+		net.Start("lrp.notification")
+		net.WriteString(text)
+		net.Send(self)
+	end
+
 	hook.Add("PlayerCanSeePlayersChat", "lrp.localchat", function(text,team,listener,speaker)
 		return (speaker:GetPos():Distance(listener:GetPos())<=300)
 	end)
@@ -43,4 +50,9 @@ if CLIENT then
 		local tbl = net.ReadTable()
 		chat.AddText(unpack(tbl))
 	end)
+
+	net.Receive("lrp.notification", function()
+		local text = net.ReadString()
+		notification.AddLegacy(text, NOTIFY_GENERIC, 5)
+	end) 
 end

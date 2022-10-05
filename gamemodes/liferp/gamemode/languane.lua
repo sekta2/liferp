@@ -62,6 +62,14 @@ lrplanguanes = {
 		["lrp.quests.box.success2"] = "за помощь.",
 		["lrp.quests.box.wherebox"] = "Возьми коробку!",
 		["lrp.quests.box.taked"] = "Вы уже взяли коробку! Просто донесите её до точки Б.",
+		["lrp.take"] = "Взять",
+		["lrp.money"] = "Деньги",
+		["lrp.takedmoney"] = "Ты взял",
+		["lrp.entermoneydrop"] = "Введите сколько вы хотите выкинуть денег",
+		["lrp.entermoneysend"] = "Введите сколько вы хотите передать денег",
+		["lrp.drop"] = "Выкинуть",
+		["lrp.dropmoney"] = "Выкинуть деньги",
+		["lrp.sendmoney"] = "Передать деньги человеку впереди",
 	},
 	["en"] = {
 		["lrp.hint.use"] = "Press E",
@@ -118,6 +126,14 @@ lrplanguanes = {
 		["lrp.quests.box.success2"] = "for your help.",
 		["lrp.quests.box.wherebox"] = "Take the box!",
 		["lrp.quests.box.taked"] = "You have already taken the box! Just get her to point B.",
+		["lrp.take"] = "Take",
+		["lrp.money"] = "Money",
+		["lrp.takedmoney"] = "You take",
+		["lrp.entermoneydrop"] = "Enter how much money you want to drop",
+		["lrp.entermoneysend"] = "Enter how much money you would like to send",
+		["lrp.drop"] = "Drop",
+		["lrp.dropmoney"] = "Drop Money",
+		["lrp.sendmoney"] = "Send money to person ahead",
 	}
 }
 

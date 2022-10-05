@@ -38,6 +38,22 @@ local function loadMenu1()
 		local menu = vgui.Create("DMenu", panel)
 		menu:SetPos(gui.MouseX(),gui.MouseY())
 
+		local moneymenu = menu:AddSubMenu(lrpGetPhrase("lrp.money"))
+		moneymenu:AddOption(lrpGetPhrase("lrp.dropmoney"), function() 
+			Derma_StringRequest(lrpGetPhrase("lrp.entermoneydrop"), lrpGetPhrase("lrp.chat.text"), "", function(text)
+				cdropMoney(text:match('%d+'))
+			end, nil, lrpGetPhrase("lrp.drop"), lrpGetPhrase("lrp.cancel"))
+		end)
+		if IsValid(LocalPlayer():GetEyeTrace().Entity) then
+			if LocalPlayer():GetEyeTrace().Entity:IsPlayer() then
+				moneymenu:AddOption(lrpGetPhrase("lrp.sendmoney"), function() 
+					Derma_StringRequest(lrpGetPhrase("lrp.entermoneysend"), lrpGetPhrase("lrp.chat.text"), "", function(text)
+						csendMoney(text:match('%d+'))
+					end, nil, lrpGetPhrase("lrp.send"), lrpGetPhrase("lrp.cancel"))
+				end)
+			end
+		end
+
 		local chatmenu = menu:AddSubMenu(lrpGetPhrase("lrp.chat"))
 		chatmenu:AddOption(lrpGetPhrase("lrp.chat.me"), function() 
 			Derma_StringRequest(lrpGetPhrase("lrp.chat.me"), lrpGetPhrase("lrp.chat.text"), "", function(text)
